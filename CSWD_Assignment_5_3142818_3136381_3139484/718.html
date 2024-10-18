@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="splide-4.1.3/dist/css/splide.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Porsche | 718</title>
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function () {
+            new Splide( '#image-carousel', {
+                heightRatio: 0.5,
+            } ).mount();
+            } );
+
+        // Accordion
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordions = document.querySelectorAll('.accordion-button');
+            
+            accordions.forEach(button => {
+                button.addEventListener('click', function () {
+                    const content = this.nextElementSibling;
+                    
+                    // Close all other accordion contents
+                    document.querySelectorAll('.accordion-content').forEach(content => {
+                        if (content !== this.nextElementSibling) {
+                            content.style.maxHeight = null;
+                            content.style.opacity = 0;
+                        }
+                    });
+                    
+                    // Toggle the display of the content
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        content.style.opacity = 0;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.style.opacity = 1;
+                    }
+                });
+            });
+        });
+
+      </script>
+</head>
+<body>
+    <style>
+        
+        .splide__slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+       /* Start of header css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        #masthead /*Adding these details again as there is a slight change, need to check with alex*/
+        {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 1em;
+            padding-top: 0;
+            min-height: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between; /* Distribute items evenly along the main axis */
+            background-color: #181818;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        nav {
+            margin-top: 0;
+            padding-right: 1.5em; 
+        }
+        .logo {
+            width: 150px;
+            margin-top: 0.5em;
+            margin-left: 0.5em;
+        }
+
+        .nav_links
+        {
+            text-align: right;
+        }
+
+        .nav_links ul 
+        {
+            padding: 0;
+            margin-top: 2em;
+            text-align: right;
+        }
+        .nav_links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav_links ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav_links ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav_links ul li:hover::after {
+            width: 100%;     
+        }
+        /* End of header css */
+
+        /* Start of main content css */
+
+        .img-container {
+            display: flex;
+        }
+
+        .details {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 3rem;
+            margin-left: 8rem;
+            flex: 1;
+        }
+
+        .specs {
+            padding: 1rem;
+            margin-right: 5rem;
+        }        
+
+        .specs h3 {
+            margin-bottom: 3rem;
+        }
+
+        .content{
+            margin: 5rem 5rem 10rem 5rem;
+        }
+
+        .model {
+            display: flex;
+            background-color: rgb(240, 240, 240);
+            border-radius: 8px;
+            margin-top: 1.875rem;
+        }
+
+        .accordion-container {
+            background-color: white;
+            border-radius: 8px;
+            margin-top: 1.875rem;
+        
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .accordion-item {
+            margin-bottom: 10px;
+        }
+
+        .accordion-button {
+            width: 100%;
+            
+            padding: 20px 15px;
+            text-align: left;
+            background-color: #fff;
+            color: black;
+            border: none;
+            outline: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .accordion-button:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .accordion-content {
+            
+            background-color: #fff;
+            border-radius: 4px;
+            margin-top: 5px;
+            font-size: 16px;
+            color: #535457;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            opacity: 0;
+        }
+
+        .accordion-line {
+            border: 0.1px solid rgba(0, 0, 0, 0.2);
+            margin-top: 5px;
+        }
+
+        .accordion-content p {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .accordion-content p span {
+            font-weight: 500;
+            color: #000;
+            font-size: 18px;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            padding: 1rem 5rem 1rem 5rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive code begins here */
+        @media screen and (max-width: 768px){
+            .img-container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-left: 5rem;
+            padding-top: 4rem;
+            }
+
+            .details {
+                flex-direction: column;
+                padding: 2rem;
+                margin-left: 0;
+            }
+
+            .specs {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .specs h3 {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .details {
+                padding: 1rem;
+            }
+
+            .specs {
+                padding: 0.5rem;
+            }
+
+            .specs h3 {
+                margin-bottom: 1rem;
+            }
+        }
+
+    </style>
+    <header class="header">
+        <div class="masthead">
+            <div class="menu">
+                <a id="logo" href="index.html"><img src="images/porsche_logo_PNG7.png" alt="logo"></a>
+            </div>
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="nav_links" id="nav_links">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="models.html">MODELS</a></li>
+                        <li><a href="author.html">ABOUT AUTHORS</a></li>
+                        <li><a href="contact.html">CONTACT US</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section id="image-carousel" class="splide" aria-label="Beautiful Images">
+        <div class="splide__track">
+              <ul class="splide__list">
+                  <li class="splide__slide">
+                      <img src="images/718-1.jpeg" alt="718 picture 1">
+                  </li>
+                  <li class="splide__slide">
+                      <img src="images/718-2.jpeg" alt="718 picture 2">
+                  </li>
+                  <li class="splide__slide">
+                      <img src="images/718-3.jpeg" alt="718 picture 3">
+                  </li>
+                  <li class="splide__slide">
+                    <img src="images/718-4.jpeg" alt="718 picture 4">
+                </li>
+                <li class="splide__slide">
+                    <img src="images/718-5.jpeg" alt="718 picture 5">
+                </li>
+                <li class="splide__slide">
+                    <img src="images/718-6.jpeg" alt="718 picture 6">
+                </li>
+                <li class="splide__slide">
+                    <img src="images/718-7.jpeg" alt="718 picture 7">
+                </li>
+                <li class="splide__slide">
+                    <img src="images/718-8.jpeg" alt="718 picture 8">
+                </li>
+                <li class="splide__slide">
+                    <img src="images/718-9.jpeg" alt="718 picture 9">
+                </li>
+              </ul>
+        </div>
+      </section>
+        <div class="sticky">
+            <p>718</p>
+            <h2>Technical Details</h2></div>
+    <div class="content">
+        <div class="model">
+            <div class="img-container">
+                <img src="images/911-model.svg" alt="911 model">
+                <div class="details">
+                    <div class="specs">
+                        <p>Length</p>
+                        <h3>4.379 mm</h3>
+                        <p>Width</p>
+                        <h3>1.801 mm</h3>
+                    </div>
+                    <div class="specs">
+                        <p>Height</p>
+                        <h3>1.295 mm</h3>
+                        <p>Wheelbase</p>
+                        <h3>2.475 mm</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-container">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button">Power Unit <span>-</span></button>
+                    <div class="accordion-content">
+                        <p>Number of cylinders<span>4</span></p>
+                        <p>Bore<span></span>91,0 mm</p>
+                        <p>Stroke<span>76,4 mm</span></p>
+                        <p>Displacement<span>1.988 cm³</span></p>
+                        <p>Power (kW)<span>220 kW</span></p>
+                        <p>Power (PS)<span>300 PS</span></p>
+                        <p>RPM point maximum power<span>6.500 1/min</span></p>
+                        <p>Maximum engine speed<span>7.500 1/min</span></p>
+                        <p>Max. torque (Manual)<span>380 Nm</span></p>
+                        <p>RPM range maximum torque<span>2.150 - 4.500 1/min</span></p>
+                        <p>Max. output per liter (kW/l)<span>111,00 kW/l</span></p>
+                        <p>Max. output per liter (PS/l)<span>150,00 PS/l</span></p>
+                    </div>
+                    <div class="accordion-line"></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Performance<span>-</span></button>
+                    <div class="accordion-content">
+                        <p>Top speed<span></span></p>
+                        <p>Acceleration 0 - 100 km/h<span>4,2 s</span></p>
+                        <p>Acceleration 0 - 100 km/h with Sport Chrono Package<span>4,0 s</span></p>
+                        <p>Acceleration 0 - 160 km/h<span>9,3 s</span></p>
+                        <p>Acceleration 0 - 160 km/h with Sport Chrono Package<span>9,0 s</span></p>
+                        <p>Acceleration 0 - 200 km/h<span>14,5 s</span></p>
+                        <p>Acceleration 0 - 200 km/h with Sport Chrono Package<span>14,2 s</span></p>
+                        <p>In-gear acceleration (80-120km/h) (50-75 mph)<span>2,6 s</span></p>
+                    </div>
+                    <div class="accordion-line"></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Consumption/Emissions WLTP<span>-</span></button>
+                    <div class="accordion-content">
+                        <p>CO2 Class<span>A</span></p>
+                        <p>Emission standard (WLTP)<span>EU6 AX</span></p>
+                        <p>CO2-emissions combined (WLTP)<span>0 g/km</span></p>
+                        <p>Electrical consumption low (WLTP) (Performance Battery)<span>17.3 - 15.0 kWh/100 km</span></p>
+                        <p>Electrical consumption low (WLTP) (Performance Battery Plus)<span>16.3 - 14.5 kWh/100 km</span></p>
+                        <p>Electrical consumption medium (WLTP) (Performance Battery)<span>17.2 - 14.7 kWh/100 km</span></p>
+                        <p>Electrical consumption medium (WLTP) (Performance Battery Plus)<span>15.9 - 13.8 kWh/100 km</span></p>
+                        <p>Electrical consumption high (WLTP) (Performance Battery)<span>18.1 - 15.4 kWh/100 km</span></p>
+                        <p>Electrical consumption high (WLTP) (Performance Battery Plus)<span>16.5 - 14.2 kWh/100 km</span></p>
+                        <p>Electrical consumption extra-high (WLTP) (Performance Battery)<span>23.3 - 19.7 kWh/100 km</span></p>
+                        <p>Electrical consumption extra-high (WLTP) (Performance Battery Plus)<span>21.4 - 18.1 kWh/100 km</span></p>
+                    </div>
+                    <div class="accordion-line"></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Sound level(type approved based on UN-R 51)<span>-</span></button>
+                    <div class="accordion-content">
+                        <p>Sound level of passing vehicle<span>68 dB(A)</span></p>
+                    </div>
+                    <div class="accordion-line"></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Range<span>-</span></button>
+                    <div class="accordion-content">
+                        <p>Electric range combined (WLTP) (Performance Battery)<span>503 - 590 km</span></p>
+                        <p>Electric range combined (WLTP) (Performance Battery Plus)<span>579 - 678 km</span></p>
+                        <p>Electric range urban (WLTP) (Performance Battery)<span>569 - 662 km</span></p>
+                        <p>Electric range urban (WLTP) (Performance Battery Plus)<span>719 - 821 km</span></p>
+                        <p>Electric range combined (ECE) (Performance Battery)<span>566 km</span></p>
+                        <p>Electric range combined (ECE) (Performance Battery Plus)<span>651 km</span></p>
+                    </div>
+                    <div class="accordion-line"></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Charging<span>-</span></button>
+                    <div class="accordion-content">
+                        <p>Gross battery energy content (Performance Battery)<span>89.0 kWh</span></p>
+                        <p>Gross battery energy content (Performance Battery Plus)<span>105.0 kWh</span></p>
+                        <p>Net battery energy content (Performance Battery)<span>82.3 kWh</span></p>
+                        <p>Net battery energy content (Performance Battery Plus)<span>97.0 kWh</span></p>
+                        <p>Maximum charging power with direct current (DC) (Performance Battery)<span>270 kW</span></p>
+                        <p>Maximum charging power with direct current (DC) (Performance Battery Plus)<span>320 kW</span></p>
+                        <p>Charging time for alternating current (AC) with 9.6 kW (0 to up to 100 %) (Performance Battery)<span>10.50 h</span></p>
+                        <p>Charging time for alternating current (AC) with 9.6 kW (0 to up to 100 %) (Performance Battery Plus)<span>12.00 h</span></p>
+                        <p>Charging time for alternating current (AC) with 11 kW (0 to up to 100 %) (Performance Battery)<span>9.00 h</span></p>
+                        <p>Charging time for alternating current (AC) with 11 kW (0 to up to 100 %) (Performance Battery Plus)<span>11.00 h</span></p>
+                        <p>Charging time for direct current (DC) with 120 kW (500V, 250A,10 to up to 80 %)<span>46 min</span></p>
+                        <p>Charging time for direct current (DC) with 150 kW (10 to up to 80 %)<span>33 min</span></p>
+                        <p>Charging time for direct current (DC) with maximum charging power (10 to up to 80 %)<span>18 min</span></p>
+                        <p>Recharged range (WLTP) in 10 min with 150 kW (Performance Battery)<span>109 km</span></p>
+                        <p>Recharged range (WLTP) in 10 min with 150 kW (Performance Battery Plus)<span>134 km</span></p>
+                        <p>Recharged range (WLTP) in 10 min with maximum charging power (Performance Battery)<span>272 km</span></p>
+                        <p>Recharged range (WLTP) in 10 min with maximum charging power (Performance Battery Plus)<span>315 km</span></p>
+                    </div>
+                    <div class="accordion-line"></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Body<span>-</span></button>
+                    <div class="accordion-content">
+                        <p>Length<span>4,963 mm</span></p>
+                        <p>Width<span>1,966 mm</span></p>
+                        <p>Width (with mirrors)<span>2,144 mm</span></p>
+                        <p>Height<span>1,379 mm</span></p>
+                        <p>Wheelbase<span>2,900 mm</span></p>
+                        <p>Turning circle<span>11.7 m</span></p>
+                        <p>Unladen weight (DIN) (Performance Battery)<span>2,090 kg</span></p>
+                        <p>Unladen weight (DIN) (Performance Battery Plus)<span>2,170 kg</span></p>
+                        <p>Unladen weight (EU) (Performance Battery)<span>2,165 kg</span></p>
+                        <p>Unladen weight (EU) (Performance Battery Plus)<span>2,245 kg</span></p>
+                        <p>Permissible gross weight<span>2,795 kg</span></p>
+                        <p>Maximum load (Performance Battery)<span>705 kg</span></p>
+                        <p>Maximum load (Performance Battery Plus)<span>625 kg</span></p>
+                        <p>Maximum permissible roof load with Porsche roof transport system<span>75 kg</span></p>
+                    </div>
+                    <p><span></span></p>
+                    <div class="accordion-line"></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Capacities<span>-</span></button>
+                    <div class="accordion-content">
+                        <p>Luggage compartment volume, front<span>84 l</span></p>
+                        <p>Luggage compartment volume, rear V210-2<span>407 l</span></p>
+                    </div>
+                    <div class="accordion-line"></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Performance<span>-</span></button>
+                    <div class="accordion-content">
+                        <p>Top speed<span>230 km/h</span></p>
+                        <p>Acceleration 0 - 100 km/h with Launch Control<span>4.8 s</span></p>
+                        <p>Acceleration 0 - 160 km/h with Launch Control (Performance Battery)<span>10.6 s</span></p>
+                        <p>Acceleration 0 - 160 km/h with Launch Control (Performance Battery Plus)<span>10.3 s</span></p>
+                        <p>Acceleration 0 - 200 km/h with Launch Control (Performance Battery)<span>16.5 s</span></p>
+                        <p>Acceleration 0 - 200 km/h with Launch Control (Performance Battery Plus)<span>15.8 s</span></p>
+                        <p>Acceleration (80-120km/h) (50-75 mph) with Launch Control (Performance Battery)<span>2.9 s</span></p>
+                        <p>Acceleration (80-120km/h) (50-75 mph) with Launch Control (Performance Battery Plus)<span>2.7 s</span></p>
+                    </div>
+                    <div class="accordion-line"></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Terrain features<span>-</span></button>
+                    <div class="accordion-content">
+                        <p>Slope angle, front/rear air suspension (normal ride height)<span>11.1 - 14.2 °</span></p>
+                        <p>Ramp break over angle air suspension (normal ride height)<span>10.6 °</span></p>
+                        <p>Max. ground clearance air suspension (normal ride height)<span>127 mm</span></p>
+                    </div>
+                    <div class="accordion-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="footer">
+            <div id="footer_content1">
+                <h2>Porsche Corporate</h2>
+                <p><a href="https://www.porsche.com/usa/aboutporsche/overview/">Porsche at a Glance</a></p>
+                <p><a href="https://www.porsche.com/usa/aboutporsche/jobs/Career">Career</a></p>
+            </div>
+            <div id="footer_content1">
+                <h2>Contact</h2>
+                <p><a href="https://dealer.porsche.com/ie/porschecentredublin/en-IE">Porsche Centre Dublin</a></p>
+                <p><a href="https://www.porsche.com/usa/motorsportandevents/porschepartnerforum/">Partner Forum</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div id="footer_content3">
+                <h2>Social Media</h2>
+                <p>Get in touch with us via social media.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/porsche/"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/porsche/"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                    <a href="https://ie.pinterest.com/porsche/"><img src="images/pinterest-icon.png" alt="Pinterest"></a>
+                    <a href="https://www.youtube.com/user/Porsche"><img src="images/youtube-icon.png" alt="YouTube"></a>
+                    <a href="https://x.com/Porsche"><img src="images/X-icon.png" alt="Twitter"></a>
+                    <a href="https://www.linkedin.com/company/porsche-ag/"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div id="legal">
+                <p>© 2024 Porsche Cars Dublin, Inc.</p>
+                <p><a href="https://www.porsche.com/usa/legal-notice/">Legal notice, </a><a href="https://www.porsche.com/usa/privacy-policy/">Privacy notice</a></p>
+        </div>
+        <div>
+            <a id="footer_logo" href="index.html"><img src="images/footer_logo.png" alt="footer_logo" width="600" height="50"></a>
+        </div>
+    </footer>
+    <script src="splide-4.1.3/dist/js/splide.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="masthead">
+            <div class="menu">
+                <a id="logo" href="index.html"><img src="images/porsche_logo_PNG7.png" alt="logo"></a>
+            </div>
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="nav_links" id="nav_links">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="models.html">MODELS</a></li>
+                        <li><a href="author.html">ABOUT AUTHORS</a></li>
+                        <li><a href="contact.html">CONTACT US</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="contact-us">
+        <h1>Contact Us</h1>
+        <div class="contact-details">
+            <h2>Our Contact Details</h2>
+            <p>Email: contact@porsche.co.uk</p>
+            <p>Phone: +44 3457 911 911</p>
+            <p>Address: Porsche Customer Interaction Centre
+                Porsche Cars Great Britain Limited
+                Bath Road
+                Calcot
+                Reading
+                RG31 7SE, Ireland</p>
+        </div>
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="button" onclick="validateAndPreview()">Preview Message</button>
+            </form>
+        </div>
+        <div class="message-preview" id="messagePreview" style="display:none;">
+            <h2>Preview Your Message</h2>
+            <p><strong>Name:</strong> <span id="previewName"></span></p>
+            <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+            <p><strong>Message:</strong></p>
+            <p id="previewMessage"></p>
+            <button type="button" onclick="hidePreview()">Edit</button>
+            <button type="submit" form="contactForm">Send Message</button>
+        </div>
+    </div>
+    <footer>
+        <div id="footer">
+            <div id="footer_content1">
+                <h2>Porsche Corporate</h2>
+                <p><a href="https://www.porsche.com/usa/aboutporsche/overview/">Porsche at a Glance</a></p>
+                <p><a href="https://www.porsche.com/usa/aboutporsche/jobs/Career">Career</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div id="footer_content2">
+                <h2>Contact</h2>
+                <p>Porsche Centre Dublin</p>
+                <p>Partner Forum</p>
+            </div>
+            <div id="footer_content3">
+                <h2>Social Media</h2>
+                <p>Get in touch with us via social media.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/porsche/"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/porsche/"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                    <a href="https://ie.pinterest.com/porsche/"><img src="images/pinterest-icon.png" alt="Pinterest"></a>
+                    <a href="https://www.youtube.com/user/Porsche"><img src="images/youtube-icon.png" alt="YouTube"></a>
+                    <a href="https://x.com/Porsche"><img src="images/X-icon.png" alt="Twitter"></a>
+                    <a href="https://www.linkedin.com/company/porsche-ag/"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div id="legal">
+                <p>© 2024 Porsche Cars Dublin, Inc.</p>
+                <p><a href="https://www.porsche.com/usa/legal-notice/">Legal notice, </a><a href="https://www.porsche.com/usa/privacy-policy/">Privacy notice</a></p>
+        </div>
+        <div>
+            <a id="footer_logo" href="index.html"><img src="images/footer_logo.png" alt="footer_logo" width="600" height="50"></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
