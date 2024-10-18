@@ -3,6 +3,6 @@ It was a group assignment and we chose to build a website for Porsche.
 As all of us were very new to coding, we were only using GitLab which was also a part of our first year curriculum.
 I'm publishing our code here to get comfortable with github.
 My contributionto the website:
- - About Authors Page
- - Models Page
- - About Us Page.
+ - About Authors Page (author.html)
+ - Models Page (models.html)
+ - About Us Page (about.html)
